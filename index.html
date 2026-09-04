@@ -1,0 +1,252 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WOW Employee Portal - Field &amp; Safety Management</title>
+<!-- Tailwind CSS v3 CDN with Forms and Container Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0f2942',
+              blue: '#03437e',
+              amber: '#d97706',
+              lightBlue: '#eef6fc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+  </style>
+<style data-purpose="layout">
+    /* Subtle background grid pattern typical of industrial enterprise dashboards */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(15, 41, 66, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 41, 66, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-slate-100/90 text-slate-800 antialiased select-none">
+<!-- BEGIN: TopHeader -->
+<header class="bg-white border-b border-slate-200/90 shadow-sm sticky top-0 z-30">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<!-- Company Branding / Logo Area -->
+<div class="flex items-center space-x-3.5" data-purpose="brand-logo">
+<div class="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white font-black text-xl tracking-wider shadow-sm shadow-amber-500/20">
+          W
+        </div>
+<div class="leading-tight">
+<div class="flex items-center gap-1.5">
+<span class="font-black tracking-tight text-brand-navy text-lg uppercase">WOW</span>
+<span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200 uppercase">Operations</span>
+</div>
+<p class="text-[11px] text-slate-500 tracking-wide font-medium">Zachry Hospitality</p>
+</div>
+</div>
+<!-- Right Header Controls: Language Selector & User Badge -->
+<div class="flex items-center space-x-6" data-purpose="user-navigation">
+<!-- Language Switcher (Radio Style matching Zachry reference) -->
+<fieldset aria-label="Language selector" class="flex items-center bg-slate-100/80 px-2.5 py-1 rounded-full border border-slate-200 text-xs font-medium text-slate-600">
+<label class="inline-flex items-center cursor-pointer mr-3">
+<input checked="" class="w-3.5 h-3.5 text-brand-blue border-slate-300 focus:ring-brand-blue/30 focus:ring-offset-0" name="portal_lang" type="radio" value="en">
+<span class="ml-1.5 text-slate-800 font-semibold">English</span>
+</label>
+<label class="inline-flex items-center cursor-pointer">
+<input class="w-3.5 h-3.5 text-brand-blue border-slate-300 focus:ring-brand-blue/30 focus:ring-offset-0" name="portal_lang" type="radio" value="es">
+<span class="ml-1.5 text-slate-600">Español</span>
+</label>
+</fieldset>
+<!-- User Profile Badge -->
+<div class="flex items-center pl-2 border-l border-slate-200 gap-3">
+<div class="text-right hidden sm:block">
+<div class="text-xs font-bold text-slate-800">Hatfield, Zachary O</div>
+<div class="text-[11px] text-slate-500 font-medium">Field Superintendent</div>
+</div>
+<div class="w-9 h-9 rounded-full bg-brand-navy text-white flex items-center justify-center font-semibold text-xs ring-2 ring-brand-blue/20 ring-offset-1">
+            ZH
+          </div>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col justify-center">
+<!-- Welcome & Context Banner -->
+<section class="mb-8" data-purpose="welcome-banner">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 border-b border-slate-200">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 tracking-tight">
+            Welcome, <span class="text-brand-blue">Hatfield, Zachary O</span>
+</h1>
+<p class="text-sm text-slate-500 mt-0.5">Site Operational Hub &amp; Field Reporting</p>
+</div>
+<div class="mt-3 sm:mt-0 flex items-center space-x-2 text-xs text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">Shift A • Unit 4 Turnaround</span>
+</div>
+</div>
+</section>
+<!-- 5 Dedicated Tiles Section -->
+<section class="w-full" data-purpose="portal-tiles">
+<!-- Grid Container: 3 tiles on top row, 2 tiles centered on bottom row (on lg screens) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
+<!-- Card 1: Checklists -->
+<article aria-label="Open Checklists" class="group relative bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between min-h-[170px]" role="button" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="w-13 h-13 p-3 rounded-xl bg-blue-50 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors duration-200">
+<!-- Clipboard-check SVG Icon -->
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+              3 Pending
+            </span>
+</div>
+<div class="mt-4">
+<h2 class="text-xl font-bold text-slate-800 group-hover:text-brand-blue transition-colors">Checklists</h2>
+<p class="text-xs text-slate-500 mt-1 font-medium">Daily pre-task safety analysis, work permits &amp; signoffs</p>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:translate-x-0.5 transition-transform">
+<span class="">Launch Forms</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</article>
+<!-- Card 2: Housekeeping Inspection -->
+<article aria-label="Open Housekeeping Inspection" class="group relative bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between min-h-[170px]" role="button" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="w-13 h-13 p-3 rounded-xl bg-amber-50 text-amber-700 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-200">
+<!-- Safety / Clean Area Inspection SVG Icon -->
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-200">
+              Weekly Round
+            </span>
+</div>
+<div class="mt-4">
+<h2 class="text-xl font-bold text-slate-800 group-hover:text-brand-blue transition-colors">Housekeeping Inspection</h2>
+<p class="text-xs text-slate-500 mt-1 font-medium">Jobsite orderliness, laydown yards, walkways &amp; storage checks</p>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:translate-x-0.5 transition-transform">
+<span class="">Start Inspection</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</article>
+<!-- Card 3: Equipment Tracker -->
+<article aria-label="Open Equipment Tracker" class="group relative bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between min-h-[170px]" role="button" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="w-13 h-13 p-3 rounded-xl bg-cyan-50 text-cyan-800 group-hover:bg-cyan-700 group-hover:text-white transition-colors duration-200">
+<!-- Heavy Equipment / Truck / Telematics Tracker SVG Icon -->
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-brand-blue border border-blue-200">
+              18 Assets Active
+            </span>
+</div>
+<div class="mt-4">
+<h2 class="text-xl font-bold text-slate-800 group-hover:text-brand-blue transition-colors">Equipment Tracker</h2>
+<p class="text-xs text-slate-500 mt-1 font-medium">Yellow iron telematics, daily engine hours &amp; maintenance logs</p>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:translate-x-0.5 transition-transform">
+<span class="">View Fleet</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</article>
+<!-- Row 2 centered grouping for remaining 2 tiles on desktop -->
+<div class="col-span-1 md:col-span-2 lg:col-span-3 flex flex-col md:flex-row justify-center gap-5">
+<!-- Card 4: Certifications -->
+<article aria-label="Open Certifications" class="w-full lg:w-[calc(50%-10px)] group relative bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between min-h-[170px]" role="button" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="w-13 h-13 p-3 rounded-xl bg-indigo-50 text-indigo-700 group-hover:bg-indigo-700 group-hover:text-white transition-colors duration-200">
+<!-- Certifications / Badge / Medal SVG Icon -->
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                100% Compliant
+              </span>
+</div>
+<div class="mt-4">
+<h2 class="text-xl font-bold text-slate-800 group-hover:text-brand-blue transition-colors">Certifications</h2>
+<p class="text-xs text-slate-500 mt-1 font-medium">OSHA cards, operator licenses, site badges &amp; expiry records</p>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-brand-blue group-hover:translate-x-0.5 transition-transform">
+<span class="">View Credentials</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</article>
+<!-- Card 5: Incidents -->
+<article aria-label="Open Incidents" class="w-full lg:w-[calc(50%-10px)] group relative bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-red-500/40 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between min-h-[170px]" role="button" tabindex="0">
+<div class="flex items-start justify-between">
+<div class="w-13 h-13 p-3 rounded-xl bg-rose-50 text-rose-700 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-200">
+<!-- Incident / Alert Triangle SVG Icon -->
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200">
+                Rapid Safety Reporting
+              </span>
+</div>
+<div class="mt-4">
+<h2 class="text-xl font-bold text-slate-800 group-hover:text-rose-700 transition-colors">Incidents</h2>
+<p class="text-xs text-slate-500 mt-1 font-medium">Log near misses, property impact, injury reports &amp; safety escalations</p>
+</div>
+<div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-rose-700 group-hover:translate-x-0.5 transition-transform">
+<span class="">Report Incident</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: StickyFooterBar -->
+<footer class="bg-slate-800 text-slate-300 border-t border-slate-700 mt-auto shadow-inner" data-purpose="status-bar-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between text-xs">
+<!-- Version & Build Info -->
+<div class="flex items-center space-x-3 text-slate-300 font-medium">
+<span class="inline-flex items-center">
+<span class="w-2 h-2 rounded-full bg-emerald-400 mr-2"></span>
+          Version: 1.4.5 Prod
+        </span>
+<span class="text-slate-500">|</span>
+<span class="text-slate-400 hidden sm:inline">Connected to Zachry Enterprise Gateway</span>
+</div>
+<!-- Settings Action -->
+<div class="flex items-center">
+<button aria-label="Portal settings" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-slate-200 hover:text-white hover:bg-slate-700/80 border border-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-500" type="button">
+<!-- Cog / Settings Gear Icon -->
+<svg class="w-4 h-4 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="font-semibold">Settings</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- END: StickyFooterBar -->
+
+
+</body></html>
